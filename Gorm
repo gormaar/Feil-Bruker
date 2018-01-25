@@ -13,3 +13,6 @@ func main() {
 }
 8
 ​
+func main() {
+	fmt.Println("Hello, Marius")
+}
