@@ -16,3 +16,7 @@ func main() {
 func main() {
 	fmt.Println("Hello, Marius")
 }
+
+func main(){
+	fmt.println("Hello, Kevin ;)")
+	}
