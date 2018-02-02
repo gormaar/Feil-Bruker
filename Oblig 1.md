@@ -1,13 +1,21 @@
-Binære tall (mest signifikant bit til venstre             Hexadesimaltall                     Desimaltall
+<h1>      Obligatorisk oppgave 1
+<h2>      Gorm-Erik, Kevin, Marius
 
-1101                                                          0xD                                 13
+<h3>      1. Fyll ut manglende tall i tabell
 
-110111101010
+Binære tall|Hexadesimal|Desimaltall
+-|-|-
+1101|0xD|13
+110111101010| |
+ |0xAF34| 
+x | x | 65535
+x | x | 71562
 
-                                                            0xAF34 
+<h4>      Oppgave A
+Beskriv kort metode for å gå fra binære tall til hexadesimale tall og motsatt. Beskriv kort metoden for å gå fra binære tall til desimaltall og motsatt.
 
-                                                                                                65535
- 
-                                                                                                71562
+blablalbalbalblablalbal
+<h4>      Oppgave B
+Beskriv kort metoden for å gå fra hexadesimale tall til desimaltall og motsatt.
 
-
+blablalbalbalblab
