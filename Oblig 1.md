@@ -24,4 +24,5 @@ fra desimal til binær: deler tallet på 2, hvis rest skriv 1, hvis ikke skriv 0
 
 bruker tabellen og deler opp hexadesimalene. skriver posisjonen til hexadesimalet (fra 0-15) og ganger med 16 opphøyd i posisjonen til tallet. F.eks. DEA - Dx16^2, Ex16^1, Ax16^0
 
+<h3> 2. Forstå algoritmer og utføre “benchmark”-tester på koden <h3>
 
