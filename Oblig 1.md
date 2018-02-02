@@ -1,7 +1,7 @@
-<h1>      Obligatorisk oppgave 1
-<h2>      Gorm-Erik, Kevin, Marius
+<h1>      Obligatorisk oppgave 1 <h1>
+<h2>      Gorm-Erik, Kevin, Marius <h2>
 
-<h3>      1. Fyll ut manglende tall i tabell
+<h3>      1. Fyll ut manglende tall i tabell <h3>
 
 Binære tall|Hexadesimal|Desimaltall
 -|-|-
@@ -11,11 +11,17 @@ Binære tall|Hexadesimal|Desimaltall
 1111 1111 1111 1111 | 0xFFFF | 65535
 0001 0001 0111 1000 1010 | 0x1178A | 71562
 
-<h4>      Oppgave A
-Beskriv kort metode for å gå fra binære tall til hexadesimale tall og motsatt. Beskriv kort metoden for å gå fra binære tall til desimaltall og motsatt.
+<h4>      Oppgave A <h4>
+**Beskriv kort metode for å gå fra binære tall til hexadesimale tall og motsatt. Beskriv kort metoden for å gå fra binære tall til desimaltall og motsatt.**
 
-blablalbalbalblablalbal
-<h4>      Oppgave B
-Beskriv kort metoden for å gå fra hexadesimale tall til desimaltall og motsatt.
+Deler opp i 4 og 4 tall. Sjekker opp i tabell. F.eks. 1101 representerer 13 og D i tabellen.
+Motsatt tar man en og en fra hexadesimal og ser i tabellen.
 
-blablalbalbalblab
+Ganger sifferet med 2 opphøyd i posisjonen den står i rekka. summerer alt.
+fra desimal til binær: deler tallet på 2, hvis rest skriv 1, hvis ikke skriv 0. Deler tallet du fikk på nytt og skriver 1 hvis rest osv. helt til det bare er 1 igjen. 
+<h4>      Oppgave B <h4>
+**Beskriv kort metoden for å gå fra hexadesimale tall til desimaltall og motsatt.**
+
+bruker tabellen og deler opp hexadesimalene. skriver posisjonen til hexadesimalet (fra 0-15) og ganger med 16 opphøyd i posisjonen til tallet. F.eks. DEA - Dx16^2, Ex16^1, Ax16^0
+
+
