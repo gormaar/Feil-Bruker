@@ -26,3 +26,4 @@ bruker tabellen og deler opp hexadesimalene. skriver posisjonen til hexadesimale
 
 <h3> 2. Forstå algoritmer og utføre “benchmark”-tester på koden <h3>
 
+<h4> Oppgave A <h4>
