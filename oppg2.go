@@ -1,39 +1,45 @@
-package main
-
-import "fmt"
-
-func main(){
-	var list []int = []int{10,14,4,23,1,-3}
+package algorithms
 
 
-	Bubble_sort_modified(list)
-	fmt.Println("Our list of numbers is", list)
+func algorithms() {
+	var numbers []int = []int{5,4,2,3,1,0}
+	Bubble_sort_modified(numbers)
+	BubbleSort(numbers)
 }
-
-
 // Les https://en.wikipedia.org/wiki/Bubble_sort
 func Bubble_sort_modified(list []int) {
-
 	var N int = len(list)
 	var i int
-	for i = 0; i < N; i++{
-		var firstIndex int = 0
-		var secondIndex int = 1
-		for secondIndex < N {
-			var firstNumber int = list[firstIndex]
-			var secondNumber int = list[secondIndex]
-			if firstNumber > secondNumber {
-				list[firstIndex]  = secondNumber
-				list[secondIndex] = firstNumber
-			}
-
-			firstIndex++
-			secondIndex++
+	for i = 0; i < N; i++ {
+		if !Sweep(list, i) {
+			return
 		}
 	}
 }
 
+func Sweep(numbers []int, prevPasses int) bool {
+	var N int = len(numbers)
+	var firstIndex int = 0
+	var secondIndex int = 1
+	var didSwap bool = false
 
+	for secondIndex < (N - prevPasses) {
+		var firstNumber int = numbers[firstIndex]
+		var secondNumber int = numbers[secondIndex]
+
+		if firstNumber > secondNumber {
+			numbers[firstIndex] = secondNumber
+			numbers[secondIndex] = firstNumber
+			didSwap = true
+		}
+
+		firstIndex++
+		secondIndex++
+	}
+	return didSwap
+}
+
+// Implementering av Bubble_sort algoritmen
 func BubbleSort(list []int) {
 	// find the length of list n
 	n := len(list)
