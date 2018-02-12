@@ -34,4 +34,3 @@ bruker tabellen og deler opp hexadesimalene. skriver posisjonen til hexadesimale
 
 <h4> Oppgave C <h4>
 [Benchmarktest](https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/benchmark.md)
-[Benchmarktest](Feil-Bruker/benchmark.md)
