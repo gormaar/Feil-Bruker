@@ -27,3 +27,10 @@ bruker tabellen og deler opp hexadesimalene. skriver posisjonen til hexadesimale
 <h3> 2. Forstå algoritmer og utføre “benchmark”-tester på koden <h3>
 
 <h4> Oppgave A <h4>
+[Sorting.go](https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/sorting.go)
+
+<h4> Oppgave B <h4>
+[Sorting_test.go](https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/sorting_test.go)
+
+<h4> Oppgave C <h4>
+[Benchmarktest](https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/benchmark.md)
