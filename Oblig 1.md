@@ -29,8 +29,16 @@ fra desimal til binær: deler tallet på 2, hvis rest skriv 1, hvis ikke skriv 0
 <h4> Oppgave A </h4>
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/sorting.go">Sorting.go</a>
 
-<h4> Oppgave B <h4>
+<h4> Oppgave B </h4>
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/sorting_test.go">Sorting_test.go</a>
 
-<h4> Oppgave C <h4>
-<a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/benchmark.md">BenchmarkTest</a>
+<h4> Oppgave C </h4>
+<a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/benchmark.md">Benchmark.md</a>
+
+<h3> 3. Forstå prosessadministrajon på et platform </h3>
+
+<a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/oppg3.go">Oppg3.go
+  
+<h3> 4. Typografiske symboler </h3>
+
+a href="https://github.com/gormaar/Feilbruker/blob/Under-arbeid/">Oppg4.go
