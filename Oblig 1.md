@@ -29,11 +29,10 @@ fra desimal til binær: deler tallet på 2, hvis rest skriv 1, hvis ikke skriv 0
 
 <h4> Oppgave A </h4>
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/sorting.go">Sorting.go</a>
-(Når vi kjørte koden på mac fikk vi utskrift av alle tegnene. På windows manglet vi de første 27 tegnene)
 
 <h4> Oppgave B </h4>
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/sorting_test.go">Sorting_test.go</a>
-(Ved nærmere analyse fant vi ut at eurosymbolet ikke printer når vi kjører programmet gjennom terminal, men printer når det blir kjørt gjennom Goland)
+
 
 <h4> Oppgave C </h4>
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/benchmark.md">Benchmark.md</a>
@@ -48,5 +47,6 @@ fra desimal til binær: deler tallet på 2, hvis rest skriv 1, hvis ikke skriv 0
 <h3> 4. Typografiske symboler </h3>
 
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/ascii.go">ascii.go
+ (Når vi kjørte koden på mac fikk vi utskrift av alle tegnene. På windows manglet vi de første 27 tegnene. Ved nærmere analyse fant vi ut at eurosymbolet ikke printer når vi kjører programmet gjennom terminal, men printer når det blir kjørt gjennom Goland)
 
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/iso_test.go">iso_test.go
