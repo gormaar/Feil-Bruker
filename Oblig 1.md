@@ -14,7 +14,7 @@ Binære tall|Hexadesimal|Desimaltall
 <h4>      Oppgave A </h4>
 <b>Beskriv kort metode for å gå fra binære tall til hexadesimale tall og motsatt. Beskriv kort metoden for å gå fra binære tall til desimaltall og motsatt.</b>
 
-<p>Deler opp i 4 og 4 tall. Sjekker opp i tabell. F.eks. 1101 representerer 13 og D i tabellen.
+<p>I det vanlig tallsystemet vi kaller "base 10" der vi kan bruker 10 tall før vi må bruke tall om igjen så har vi "base 2" som er binær og "base 16" som er hexadecimaler. For å gå fra base 2 til base 16 deler vi opp i 4 og 4 tall. Sjekker opp i tabell. F.eks. 1101 representerer 13 og D i tabellen.
 Motsatt tar man en og en fra hexadesimal og ser i tabellen.
 
 Ganger sifferet med 2 opphøyd i posisjonen den står i rekka. summerer alt.
