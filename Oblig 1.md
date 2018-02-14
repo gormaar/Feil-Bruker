@@ -41,4 +41,4 @@ fra desimal til binær: deler tallet på 2, hvis rest skriv 1, hvis ikke skriv 0
   
 <h3> 4. Typografiske symboler </h3>
 
-a href="https://github.com/gormaar/Feilbruker/blob/Under-arbeid/">Oppg4.go
+<a href="https://github.com/gormaar/Feilbruker/blob/Under-arbeid/">Oppg4.go
