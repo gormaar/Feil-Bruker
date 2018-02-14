@@ -46,5 +46,6 @@ fra desimal til binær: deler tallet på 2, hvis rest skriv 1, hvis ikke skriv 0
 <h3> 4. Typografiske symboler </h3>
 
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/ascii.go">ascii.go
+  <p> Oppg.B Ved nærmere analyse fant vi ut at eurosymbolet ikke printer når vi kjører programmet gjennom terminal, men printer når det blir kjørt gjennom Goland</p>
 
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/iso_test.go">iso_test.go
