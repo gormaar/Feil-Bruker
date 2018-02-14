@@ -11,10 +11,11 @@ Binære tall|Hexadesimal|Desimaltall
 1111 1111 1111 1111 | 0xFFFF | 65535
 0001 0001 0111 1000 1010 | 0x1178A | 71562
 
-<h4>      Oppgave A </h4>
+<h4>     Oppgave A </h4>
 <b>Beskriv kort metode for å gå fra binære tall til hexadesimale tall og motsatt. Beskriv kort metoden for å gå fra binære tall til desimaltall og motsatt.</b>
 
-<p>I det vanlig tallsystemet vi kaller "base 10" der vi kan bruker 10 tall før vi må bruke tall om igjen så har vi "base 2" som er binær og "base 16" som er hexadecimaler. For å gå fra base 2 til base 16 deler vi opp i 4 og 4 tall. Sjekker opp i tabell. F.eks. 1101 representerer 13 og D i tabellen.
+<p>I det vanlig tallsystemet som vi kaller "base 10" har vi totalt 10 tall vi kan bruke før vi må bruke tall om igjen.For "base 2" som er binær og "base 16" som er hexadecimaler har vi henholdsvis 2 og 16 tall. For å gå fra base 2 til base 16 deler vi opp i 4 og 4 rekker med binære tall. Etter hvor tallet er i rekke opphøyer man med 8,4,2 og 1. F.eks: 1101 blir 1^8, 1^4, 0^2 og 1^1 som blir= 8,4,0,1.
+  Summerer man disse sammen blir det 13, som tilsvarer D i hex.
 Motsatt tar man en og en fra hexadesimal og ser i tabellen.
 
 Ganger sifferet med 2 opphøyd i posisjonen den står i rekka. summerer alt.
@@ -37,8 +38,13 @@ fra desimal til binær: deler tallet på 2, hvis rest skriv 1, hvis ikke skriv 0
 
 <h3> 3. Forstå prosessadministrajon på et platform </h3>
 
+<img src="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/Screen%20Shot%202018-02-14%20at%2023.41.03.png">
+<img src="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/Screen%20Shot%202018-02-14%20at%2023.41.10.png">
+
 <a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/oppg3.go">Oppg3.go
   
 <h3> 4. Typografiske symboler </h3>
 
-<a href="https://github.com/gormaar/Feil-Bruker/tree/Under-arbeid/">Oppg4.go
+<a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/ascii.go">ascii.go
+
+<a href="https://github.com/gormaar/Feil-Bruker/blob/Under-arbeid/iso_test.go">iso_test.go
