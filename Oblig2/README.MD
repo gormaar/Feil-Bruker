@@ -32,9 +32,9 @@
 
 <h4> Oppgave B </h4>
 
-<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig2/Oppgave3/addfromfile.go"> addfromfile.go
+<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig2/Oppgave3/addtofile.go"> addtofile.go
   
-<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig2/Oppgave3/addfromfile"> addfromfile
+<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig2/Oppgave3/addtofile"> addtofile
 
 <a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig2/Oppgave3/sumfromfile.go"> sumfromfile.go
   
