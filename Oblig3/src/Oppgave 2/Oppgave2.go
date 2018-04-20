@@ -41,6 +41,11 @@ func Handler1(w http.ResponseWriter, r *http.Request) {
 			log.Fatal(err)
 	}
 	json.Unmarshal(bytes1, &parkering)
+	
+	path := path.Join("templates", "index.html")
+	tmpl, _ := template.ParseFiles(path)
+	tmpl.Execute(w, parkering)
+
 
 	for i := 0; i < len(parkering); i++ {
 		fmt.Fprintf(w, "%v\n", parkering[i])
