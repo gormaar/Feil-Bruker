@@ -2,29 +2,33 @@ package main
 
 import (
 		"fmt"
-		"os"
 		"net"
 		"bufio"
 		"log"
+		"os"
 )
 
 
 
 func main()	{
-	fmt.Println("Starting UDP client")
+	fmt.Println("Starting UDP client \n")
 
-	conn, err := net.Dial("udp", "localhost:8080")
+	conn, err := net.Dial("udp", "localhost:17")
 	if err != nil 	{
 		log.Fatal(err)
 	}
-
-	defer conn.Close()
+	fmt.Println("Press enter to see the quote of the day")
 
 	reader := bufio.NewReader(os.Stdin)
-	read, _ := reader.ReadString('\n')
+	stringRead, _ := reader.ReadString('\n')
 
-	fmt.Fprintf(conn, read)
+	fmt.Fprintf(conn, stringRead)
 
-	message, _ := bufio.NewReader(conn).ReadString('\n')
-	fmt.Println("Message from server: ", message)
+	message, err := bufio.NewReader(conn).ReadString(')')
+		if err != nil	{
+			log.Fatal(err)
+		}
+	fmt.Println("Message from server: \n" + message)
+
+	defer conn.Close()
 }
