@@ -1,15 +1,13 @@
 package main
 
 import (
-		"fmt"
-		"net"
-		"os"
-		"time"
+	"fmt"
+	"net"
+	"os"
+	"time"
 )
 
-
 const qotd = "“Measuring programming progress by lines \n of code is like measuring aircraft \n building progress by weight.”\n(Bill Gates) "
-
 
 func main()	{
 
