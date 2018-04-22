@@ -8,7 +8,8 @@ import (
 )
 
 
-const quote = "Quote of the day"
+const qotd = "“Measuring programming progress by lines \n of code is like measuring aircraft \n building progress by weight.”\n(Bill Gates) "
+
 
 func main()	{
 
@@ -18,7 +19,7 @@ func main()	{
 	go UDP()
 
 	for    {
-		time.Sleep(100)
+		time.Sleep(10)
 	}
 }
 
@@ -30,33 +31,31 @@ func errorCheck(err error)	{
 }
 
 func TCP()	{
-	listen, err := net.Listen("tcp", ":8080")
+	listen, err := net.Listen("tcp", ":17")
 	errorCheck(err)
 
 	tcpConn, err := listen.Accept()
 	errorCheck(err)
 
-	defer tcpConn.Close()
-
 	for {
-		tcpConn.Write([]byte(quote))
+		tcpConn.Write([]byte("Quote of the day: \n" + qotd))
 		}
+	defer tcpConn.Close()
 	}
 
 func UDP()	{
-	addr, err := net.ResolveUDPAddr("udp", ":8080")
+	addr, err := net.ResolveUDPAddr("udp", ":17")
 	errorCheck(err)
 
 	udpConn, err := net.ListenUDP("udp", addr)
 	errorCheck(err)
 
-	defer udpConn.Close()
-
-	buf := make([]byte, 1024)
+	buffer := make([]byte, 1024)
 
 	for {
-		_ , addr, err := udpConn.ReadFromUDP(buf)
-		udpConn.WriteToUDP([]byte(quote), addr)
+		_ , addr, err := udpConn.ReadFromUDP(buffer)
+		udpConn.WriteToUDP([]byte("Quote of the day: \n" + qotd), addr)
 		errorCheck(err)
 	}
+	defer udpConn.Close()
 }
