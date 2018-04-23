@@ -7,8 +7,8 @@ import (
 
 func main()	{
 	fmt.Println("Starting server..")
-	http.HandleFunc("/", handler)		//Path og handler-funksjon som skriver melding
-	http.ListenAndServe(":8080",nil)	//port og handler
+	http.HandleFunc("/", handler)		//Oppretter en path og bruker handler til å skrive melding
+	http.ListenAndServe(":8080",nil)	//Port og handler
 }
 
 func handler(w http.ResponseWriter, r *http.Request){
