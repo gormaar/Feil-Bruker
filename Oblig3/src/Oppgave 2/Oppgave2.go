@@ -112,12 +112,12 @@ func Handler1(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	json.Unmarshal(bytes1, &parkering)	//Dekoder dataen som ligger i bytes, og legger den i variabelen; parkering
+	json.Unmarshal(bytes1, &parkering)		//Dekoder dataen som ligger i bytes, og legger den i variabelen; parkering
 	
 	path := path.Join("template", "parkering.html")	//Samler pathen til html-fil i en variabel
-	tmpl, _ := template.ParseFiles(path)					//Parser pathen
-	tmpl.Execute(w, parkering)								//Skriver datasett med html tags til serveren
-
+	tmpl, _ := template.ParseFiles(path)		//Parser pathen
+	tmpl.Execute(w, parkering)			//Skriver datasett med html tags til serveren
+	
 }
 
 func Handler2(w http.ResponseWriter, r *http.Request) {
@@ -171,17 +171,17 @@ func Handler2(w http.ResponseWriter, r *http.Request) {
 	}
 
 func Handler5(w http.ResponseWriter, r *http.Request)	{
-	data5, err := http.Get("https://hotell.difi.no/api/json/stavanger/miljostasjoner")
-	if err != nil	{
-		log.Fatal(err)
-	}
-	bytes5, err := ioutil.ReadAll(data5.Body)
-	if err != nil 	{
-		log.Fatal(err)
-	}
-	json.Unmarshal(bytes5, &miljostasjon)
+		data5, err := http.Get("https://hotell.difi.no/api/json/stavanger/miljostasjoner")
+		if err != nil	{
+			log.Fatal(err)
+		}
+		bytes5, err := ioutil.ReadAll(data5.Body)
+		if err != nil 	{
+			log.Fatal(err)
+		}
+		json.Unmarshal(bytes5, &miljostasjon)
 
-	path := path.Join("template", "miljøstasjon.html")
-	tmpl, _ := template.ParseFiles(path)
-	tmpl.Execute(w, miljostasjon)
-}
+		path := path.Join("template", "miljøstasjon.html")
+		tmpl, _ := template.ParseFiles(path)
+		tmpl.Execute(w, miljostasjon)
+	}
