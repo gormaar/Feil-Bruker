@@ -10,15 +10,15 @@ import (
 func main()	{
 	fmt.Println("Starting TCP client \n")
 
-	conn, err := net.Dial("tcp", "localhost:17")
+	conn, err := net.Dial("tcp", "localhost:17")		//Setter opp forbindelse med TCP-server på path "localhost:17"
 	if err != nil	{
 		log.Fatal(err)
 	}
 
-	message, _ := bufio.NewReader(conn).ReadString(')')
+	message, _ := bufio.NewReader(conn).ReadString(')')	//Leser melding fra server frem til ")"
 
-	fmt.Println("Message from server: \n" + message)
+	fmt.Println("Message from server: \n" + message)	//Skriver melding fra server
 
-	defer conn.Close()
+	defer conn.Close()					//Avslutter forbindelse
 
 }
