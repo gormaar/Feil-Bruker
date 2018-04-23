@@ -20,7 +20,7 @@
 <p> b) Samtlige stier i oppgave 2 skal rendres til klienter ved bruk av Go templates. </p>
 
 <a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave2/Oppgave2.go"> Oppgave2.go
-<br> <a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave2/index.html"> index.html
+<br> <a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave2/Templates"> Templates
 
 
 <h3> Oppgave 3 UDP/TCP server og Internett standarder </h3>
