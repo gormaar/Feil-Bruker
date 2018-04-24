@@ -98,7 +98,7 @@ func main()	{
 
 	http.HandleFunc("/5", Handler5)
 
-	http.ListenAndServe(":8080", nil)	//Definerer adresse og handler
+	http.ListenAndServe(":8080", nil)	//Setter port og handler
 
 }
 
