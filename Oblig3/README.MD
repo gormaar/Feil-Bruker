@@ -6,8 +6,8 @@
 <br> b) Når klienter aksesserer webserveren på path lik "/" skal klienten få tilbake strengen "Hello, client".
 <br> Strengen skal vises i nettleseren.</p>
 
-<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave1/Oppgave1.go"> Oppgave1.go
-  
+<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave%201/Oppgave1.go"> Oppgave1.go
+
   
 <h3> Oppgave 2 API kall og behandling av JSON og HTML templates </h3>
 <p> a) Presenter data på webserveren slik at den er leselig for mennesker
@@ -19,14 +19,13 @@
 
 <p> b) Samtlige stier i oppgave 2 skal rendres til klienter ved bruk av Go templates. </p>
 
-<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave2/Oppgave2.go"> Oppgave2.go
-<br> <a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave2/Templates"> Templates
-
+<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave%202/Oppgave2.go"> Oppgave2.go
+<br> <a href="https://github.com/gormaar/Feil-Bruker/tree/master/Oblig3/src/Oppgave%202/Templates"> Templates
 
 <h3> Oppgave 3 UDP/TCP server og Internett standarder </h3>
 <p> Implementer et serverprogram i henhold til RFC 865. Serveren skal svare både på UDP og TCP.</p>
 
 
-<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave3/server.go"> server.go
-<br> <a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave3/clientUDP.go"> clientUDP.go
-<br> <a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave3/clientTCP.go"> clientTCP.go
+<a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave%203/server.go"> server.go
+<br> <a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave%203/clientUDP.go"> clientUDP.go
+<br> <a href="https://github.com/gormaar/Feil-Bruker/blob/master/Oblig3/src/Oppgave%203/clientTCP.go"> clientTCP.go
