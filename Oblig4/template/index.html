@@ -20,10 +20,6 @@
     <script>
         var map;
         var infoWindow;
-        var infowindow;
-        //var posLat;
-        //var posLng;
-
 
         function initMap() {
 
@@ -34,25 +30,19 @@
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
-
-                    //posLat = location.getLattitude;
-                    //posLng = location.getLongitude;
-
+                    
+                    infoWindow = new google.maps.InfoWindow();
                     infoWindow.setPosition(pos);
                     infoWindow.setContent('Din posisjon');
                     infoWindow.open(map);
                     map.setCenter(pos);
 
-                    infowindow = new google.maps.InfoWindow();
                     var service = new google.maps.places.PlacesService(map);
                     service.nearbySearch({
-                        location: (pos),//(getPosition(pos)),
-                        // pos,
-                        //{lat: 58.152, lng: 8.009},
+                        location: (pos),
                         radius: 3000,
                         keyword: ['matbutikk']
                     }, callback);
-
 
                 }, function() {
                     handleLocationError(true, infoWindow, map.getCenter());
@@ -66,9 +56,7 @@
                 center: {lat: 58.152, lng: 8.009},
                 zoom: 15
             });
-            infoWindow = new google.maps.InfoWindow();
-
-
+            
             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                 infoWindow.setPosition(pos);
                 infoWindow.setContent(browserHasGeolocation ?
@@ -76,11 +64,6 @@
                         'Error: Your browser doesn\'t support geolocation.');
                 infoWindow.open(map);
             }
-
-// var infowindow = new google.maps.InfoWindow({
-            //        content: marker.getPosition()});
-
-
         }
         function callback(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -126,9 +109,7 @@
                         avoidHighways: Boolean,
                         avoidTolls: Boolean,
                     }, callback);
-
         }
-
     </script>
 </head>
 <body>
