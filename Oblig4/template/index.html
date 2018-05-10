@@ -5,11 +5,12 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
+
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
         #map {
             height: 80%;
-            width: 80%
+            width: 80%;
         }
         /* Optional: Makes the sample page fill the window. */
         html, body {
@@ -17,6 +18,7 @@
             margin: 0;
             padding: 0;
         }
+
         #right-panel {
             font-family: 'Roboto','sans-serif';
         }
@@ -80,21 +82,20 @@
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
-                    
-                    infoWindow = new google.maps.InfoWindow();
+
                     infoWindow.setPosition(pos);
-                    infoWindow.setContent('Din posisjon');
+                    infoWindow.setContent('Location found');
                     infoWindow.open(map);
                     map.setCenter(pos);
                     map.setZoom(13);
 
+                    infowindow = new google.maps.InfoWindow();
                     var service = new google.maps.places.PlacesService(map);
                     service.nearbySearch({
                         location: (pos),
-                        radius: 3000,
+                        radius: 5000,
                         keyword: ['matbutikk']
                     }, callback);
-
                 }, function() {
                     handleLocationError(true, infoWindow, map.getCenter());
                 });
@@ -104,10 +105,10 @@
             }
 
             map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 60.154, lng: 7.440},
-                zoom: 6
+                center: {lat: 59.911, lng: 10.757},
+                zoom: 7
             });
-            
+            infoWindow = new google.maps.InfoWindow();
             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                 infoWindow.setPosition(pos);
                 infoWindow.setContent(browserHasGeolocation ?
@@ -115,6 +116,7 @@
                         'Error: Your browser doesn\'t support geolocation.');
                 infoWindow.open(map);
             }
+
         }
         function callback(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -123,57 +125,32 @@
                 }
             }
         }
-
         function createMarker(place) {
             var placeLoc = place.geometry.location;
             var marker = new google.maps.Marker({
                 map: map,
                 position: place.geometry.location
             });
-
             google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(place.name);
-                infowindow.open(map, this);
+                infoWindow.setContent(place.name);
+                infoWindow.open(map, this);
             });
-             var placesList = document.getElementById('places');
+
+            var placesList = document.getElementById('places');
+
 
             var li = document.createElement('li');
             li.textContent = place.name;
             placesList.appendChild(li);
         }
-
-        var service = new google.maps.DistanceMatrixService;
-        service.GetDistanceMatrix({
-
-        })
-
-        function distance(pos, marker) {
-            var origin1 = new google.maps.LatLng(55.930385, -3.118425);
-            var origin2 = pos;
-            var destinationA = marker;
-            var destinationB = new google.maps.LatLng(50.087692, 14.421150);
-
-            var service = new google.maps.DistanceMatrixService();
-            service.getDistanceMatrix(
-                    {
-                        origins: [origin1, origin2],
-                        destinations: [destinationA, destinationB],
-                        travelMode: 'DRIVING',
-                        transitOptions: TransitOptions,
-                        drivingOptions: DrivingOptions,
-                        unitSystem: UnitSystem,
-                        avoidHighways: Boolean,
-                        avoidTolls: Boolean,
-                    }, callback);
-        }
     </script>
 </head>
 <body>
-    <body style="font-family:Verdana;">
-    <div style="background-color:#f1f1f1;text-align:center;padding:15px;"><h1>Finn butikker i nærheten</h1></div>
-    <div id="map"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvxEV8EQtWbqyCA-NeOfJ94-4QXscKi88&libraries=places&callback=initMap" async defer></script>
-    <div id="right-panel">
+<body style="font-family:Verdana;">
+<div style="background-color:#f1f1f1;text-align:center;padding:15px;"><h1>Finn butikker i nærheten</h1></div>
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Iz2emcKXSycQVElApHYmJQ6JZMt775E&libraries=places&callback=initMap" async defer></script>
+<div id="right-panel">
     <div style="background-color:#f1f1f1;padding:15px;">
         <h2>Resultat:</h2>
         <ul id="places"></ul>
