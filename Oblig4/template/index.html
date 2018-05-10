@@ -8,13 +8,63 @@
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
         #map {
-            height: 100%;
+            height: 80%;
+            width: 80%
         }
         /* Optional: Makes the sample page fill the window. */
         html, body {
-            height: 80%;
+            height: 100%;
             margin: 0;
             padding: 0;
+        }
+        #right-panel {
+            font-family: 'Roboto','sans-serif';
+        }
+
+        #right-panel select, #right-panel input {
+            font-size: 15px;
+        }
+
+        #right-panel select {
+            width: 100%;
+        }
+
+        #right-panel i {
+            font-size: 12px;
+        }
+        #right-panel {
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            right:0px;
+            top:20%;
+            height: 100%;
+            width: 20%;
+            background: #fff;
+        }
+        h2 {
+            font-size: 22px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            height: 400px;
+            width: 100%;
+            overflow-y: scroll;
+        }
+        li {
+            padding: 10px;
+            background-color: #f1f1f1;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        li:nth-child(odd) {
+            background-color: #fcfcfc;
+        }
+        #more {
+            width: 100%;
+            margin: 5px 0 0 0;
         }
     </style>
     <script>
@@ -36,6 +86,7 @@
                     infoWindow.setContent('Din posisjon');
                     infoWindow.open(map);
                     map.setCenter(pos);
+                    map.setZoom(13);
 
                     var service = new google.maps.places.PlacesService(map);
                     service.nearbySearch({
@@ -53,8 +104,8 @@
             }
 
             map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 58.152, lng: 8.009},
-                zoom: 15
+                center: {lat: 60.154, lng: 7.440},
+                zoom: 6
             });
             
             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -84,6 +135,11 @@
                 infowindow.setContent(place.name);
                 infowindow.open(map, this);
             });
+             var placesList = document.getElementById('places');
+
+            var li = document.createElement('li');
+            li.textContent = place.name;
+            placesList.appendChild(li);
         }
 
         var service = new google.maps.DistanceMatrixService;
@@ -113,7 +169,13 @@
     </script>
 </head>
 <body>
-<div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvxEV8EQtWbqyCA-NeOfJ94-4QXscKi88&libraries=places&callback=initMap" async defer></script>
+    <div style="background-color:#f1f1f1;text-align:center;padding:15px;"><h1>Finn butikker i nærheten</h1></div>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvxEV8EQtWbqyCA-NeOfJ94-4QXscKi88&libraries=places&callback=initMap" async defer></script>
+    <div id="right-panel">
+    <div style="background-color:#f1f1f1;padding:15px;">
+        <h2>Resultat:</h2>
+        <ul id="places"></ul>
+    </div>
 </body>
 </html>
