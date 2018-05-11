@@ -58,5 +58,5 @@ Dersom det ikke blir gitt tillatelse til å benytte brukerens posisjon vil det b
 
 <p>Bildet 1 viser kartet når bruker har godkjent bruk av stedsstjenester, med markers på butikkene i området rundt, og liste til høyre.</p>
 <img src="https://github.com/gormaar/Feil-Bruker/tree/master/Oblig4/bilder/bilde1.png">
-<p> Bildet 2 viser kartet når bruker ikke har godkjent bruk av stedsstjenester.
+<p> Bildet 2 viser kartet når bruker ikke har godkjent bruk av stedsstjenester.</p>
 <img src="https://github.com/gormaar/Feil-Bruker/tree/master/Oblig4/bilder/bilde2.png">
