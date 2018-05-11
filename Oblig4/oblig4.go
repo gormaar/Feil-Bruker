@@ -6,17 +6,8 @@ import (
 	"net/http"
 	"path"
 	"html/template"
-	"io/ioutil"
-	"encoding/json"
+
 )
-
-type Butikker []struct {
-	Lat float64 `json:"lat"`
-	Lng float64 `json:"lng"`
-}
-
-
-var markers Butikker
 
 func main()	{
 	fmt.Println("Starting application")
@@ -31,20 +22,9 @@ func errorCheck(err error)	{
 	}
 }
 
-func Handler(w http.ResponseWriter, r *http.Request)	{
+func Handler(w http.ResponseWriter, r *http.Request) {
 	path := path.Join("template", "index.html")
 	tmpl, _ := template.ParseFiles(path)
 
-	markers, _ := ioutil.ReadFile("markers.json")
-	json.Unmarshal(markers, &markers)
-	tmpl.Execute(w, markers)
-	fmt.Fprintf(w, "<h1>Butikker nærmest deg:</h1>")
-
-
-
-//AIzaSyAvxEV8EQtWbqyCA-NeOfJ94-4QXscKi88
-//https://maps.googleapis.com/maps/api/js?key=AIzaSyAvxEV8EQtWbqyCA-NeOfJ94-4QXscKi88&callback=initMap
+	tmpl.Execute(w, "")
 }
-//'https://storage.googleapis.com/maps-devrel/google.json'
-//https://maps.googleapis.com/maps/api/distancematrix/json?parameters
-//<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvxEV8EQtWbqyCA-NeOfJ94-4QXscKi88&libraries=places&callback=initMap" async defer></script>
