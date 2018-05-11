@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Butikker nær deg</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        #map {
+            height: 80%;
+            width: 80%;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #right-panel {
+            font-family: 'Roboto','sans-serif';
+        }
+        #right-panel select, #right-panel input {
+            font-size: 15px;
+        }
+        #right-panel select {
+            width: 100%;
+        }
+        #right-panel i {
+            font-size: 12px;
+        }
+        #right-panel {
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            right:0px;
+            top:20%;
+            height: 100%;
+            width: 20%;
+            background: #fff;
+        }
+        h2 {
+            font-size: 22px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            height: 400px;
+            width: 100%;
+            overflow-y: scroll;
+        }
+        li {
+            padding: 10px;
+            background-color: #f1f1f1;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        li:nth-child(odd) {
+            background-color: #fcfcfc;
+        }
+        {
+            width: 100%;
+            margin: 5px 0 0 0;
+        }
+    </style>
+    <script>
+        var map;
+        var infoWindow;                                  //Oppretter variabler for kart og infoWindow(vindu med innhold, f.eks over markørene
+        function initMap() {                             //Hovedfunksjon
+
+
+
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                        lat: position.coords.latitude,                                    //Denne blokken med kode bruker Geolocation for å finne brukeren sin posisjon
+                        lng: position.coords.longitude                                    //Den begynner med en if-statement som spør om brukeren har tilgjengelig/tillatt GPS
+                    };                                                                    //Deretter legger funksjonen brukeren sine koordinater inn i variabelen "pos"
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Din posisjon');                                //Infovindu over markør for brukeren sin posisjon
+                    infoWindow.open(map);
+                    map.setCenter(pos);                                                   //Åpner kartet, og sentrerer seg over bruker sin posisjon med zoom 13
+                    map.setZoom(13);
+
+                    infowindow = new google.maps.InfoWindow();                            //Lager et nytt objekt av infovindu
+                    var service = new google.maps.places.PlacesService(map);              //Lager et objekt med Google Places for å lokalisere butikker
+                    service.nearbySearch({
+                        location: (pos),
+                        radius: 1500,                                                     //Bruker "nearbySearch" funksjon for å søke etter matbutikker i en radius av 1500m rundt brukeren sin posisjon
+                        keyword: ['matbutikk']
+                    }, callback);                                                         //Kaller på callback-funksjon for legge ut markører over matbutikkene på kartet
+                }, function()
+
+                {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {                                                                      //Feilbåndtering
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+
+
+
+
+            map = new google.maps.Map(document.getElementById('map'), {                   //Lager objekt av kartet
+                center: {lat: 59.911, lng: 10.757},
+                zoom: 7
+            });
+
+
+
+            infoWindow = new google.maps.InfoWindow();                                    //Nytt objekt av infovindu
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?                             //Sjekker om klient støtter Geolocation
+                        'Error: Geolocation feilet' :
+                        'Error: Klient støtter ikke Geolocation');
+                infoWindow.open(map);                                                     
+            }
+        }
+
+
+
+        function callback(results, status) {                                              //Funksjonen sjekker først om statusen er OK
+            if (status === google.maps.places.PlacesServiceStatus.OK) {                   //Dersom status er OK, looper den over lengden av butikker som har blitt funnet
+                for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);                                             //Plasserer en markør for hver butikk som har blitt registrert
+                }
+
+            }
+        }
+
+        function createMarker(place) {                                                    //Funksjon for plassering av markører
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({                                         
+                map: map,
+                position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+                infoWindow.setContent(place.name);
+                infoWindow.open(map, this);
+            });
+            var placesList = document.getElementById('places');
+            var li = document.createElement('li');
+            li.textContent = place.name;
+            placesList.appendChild(li);
+        }
+    </script>
+</head>
+<body>
+<body style="font-family:Verdana;">
+<div style="background-color:#f1f1f1;text-align:center;padding:15px;"><h1>Finn butikker i nærheten</h1></div>
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Iz2emcKXSycQVElApHYmJQ6JZMt775E&libraries=places&callback=initMap" async defer></script>
+<div id="right-panel">
+    <div style="background-color:#f1f1f1;padding:15px;">
+        <h2>Resultat:</h2>
+        <ul id="places"></ul>
+    </div>
+</div>
+</body>
+</body>
+</html>
