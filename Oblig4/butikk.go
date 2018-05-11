@@ -22,7 +22,7 @@ func errorCheck(err error)	{			//Funksjon for feilhåndtering
 	}
 }
 
-func Handler(w http.ResponseWriter, r *http.Request) {	//Handler som parser og executer html fil
+func Handler(w http.ResponseWriter, r *http.Request) {	//Handler som parser og eksekverer html fil
 	path := path.Join("template", "index.html")
 	tmpl, _ := template.ParseFiles(path)
 
