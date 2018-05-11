@@ -54,7 +54,9 @@ Klienten sender forespørsel til serveren om å åpne nettsiden, og får derette
 Gis det tilgang, sendes brukerens posisjon til server som deretter sentrerer kartet til brukerens posisjon. 
 Samtidig sendes det forespørsel om å vise alle dagligvarebutikker innenfor en gitt radius rundt brukeren. 
 Serveren svarer med å legge butikkene inn på kartet og skrive ut en liste til høyre for kartet over alle butikker i området. 
-Dersom det ikke blir gitt tillatelse til å benytte brukerens posisjon vil det bli behandlet med en feilmelding. 
+Dersom det ikke blir gitt tillatelse til å benytte brukerens posisjon vil det bli behandlet med en feilmelding. </p>
 
+<p>Bildet 1 viser kartet når bruker har godkjent bruk av stedsstjenester, med markers på butikkene i området rundt, og liste til høyre.</p>
 <img src="https://github.com/gormaar/Feil-Bruker/tree/master/Oblig4/bilder/bilde1.png">
+<p> Bildet 2 viser kartet når bruker ikke har godkjent bruk av stedsstjenester.
 <img src="https://github.com/gormaar/Feil-Bruker/tree/master/Oblig4/bilder/bilde2.png">
