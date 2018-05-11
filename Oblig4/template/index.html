@@ -6,51 +6,43 @@
     <meta charset="utf-8">
     <style>
 
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
+        /* Størrelse på selve kartet */
         #map {
             height: 80%;
             width: 80%;
         }
-        /* Optional: Makes the sample page fill the window. */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
+            background: #f1f1f1;
         }
-
-        #right-panel {
-            font-family: 'Roboto','sans-serif';
+        h1 {
+            font-family: Verdana;
+            background: #f1f1f1;
+            text-align: center;
+            padding: 15px;
         }
-
-        #right-panel select, #right-panel input {
-            font-size: 15px;
-        }
-
-        #right-panel select {
-            width: 100%;
-        }
-
-        #right-panel i {
-            font-size: 12px;
+        h2 {
+            font-family: Verdana;
+            font-size: 22px;
+            padding: 15px;
         }
         #right-panel {
             font-family: Arial, Helvetica, sans-serif;
             position: absolute;
             right:0px;
-            top:20%;
+            top:15%;
             height: 100%;
             width: 20%;
-            background: #fff;
+            background: #f1f1f1;
         }
-        h2 {
-            font-size: 22px;
-        }
+        
         ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            height: 400px;
+            height: 70%;
             width: 100%;
             overflow-y: scroll;
         }
@@ -64,10 +56,6 @@
         li:nth-child(odd) {
             background-color: #fcfcfc;
         }
-        #more {
-            width: 100%;
-            margin: 5px 0 0 0;
-        }
     </style>
     <script>
         var map;
@@ -75,7 +63,7 @@
 
         function initMap() {
 
-            // Try HTML5 geolocation.
+            // Geolocation
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
                     var pos = {
@@ -100,7 +88,7 @@
                     handleLocationError(true, infoWindow, map.getCenter());
                 });
             } else {
-                // Browser doesn't support Geolocation
+                // Nettleseren støtter ikke Geolocation
                 handleLocationError(false, infoWindow, map.getCenter());
             }
 
@@ -151,12 +139,10 @@
     </script>
 </head>
 <body>
-<body style="font-family:Verdana;">
-<div style="background-color:#f1f1f1;text-align:center;padding:15px;"><h1>Finn butikker i nærheten</h1></div>
+<h1>Finn butikker i nærheten</h1>
 <div id="map"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Iz2emcKXSycQVElApHYmJQ6JZMt775E&libraries=places&callback=initMap" async defer></script>
 <div id="right-panel">
-    <div style="background-color:#f1f1f1;padding:15px;">
         <h2>Resultat:</h2>
         <ul id="places"></ul>
     </div>
